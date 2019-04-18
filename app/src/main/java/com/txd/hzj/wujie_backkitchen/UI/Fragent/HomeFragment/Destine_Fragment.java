@@ -1,4 +1,4 @@
-package com.txd.hzj.wujie_backkitchen.UI.Fragent;
+package com.txd.hzj.wujie_backkitchen.UI.Fragent.HomeFragment;
 
 import com.txd.hzj.code_library.BaseCode.BaseLazyFragment;
 import com.txd.hzj.wujie_backkitchen.R;
@@ -19,7 +19,6 @@ public class Destine_Fragment extends BaseLazyFragment{
     protected int getTitleBarId() {
         return 0;
     }
-
     @Override
     protected void initView() {
 

@@ -29,6 +29,9 @@
         </activity>
         <activity android:name=".UI.Activity.HomeActivity"
             android:screenOrientation="landscape"/>
+        <activity android:name=".UI.Activity.OrderdetailsActivity" />
+        <activity android:name=".UI.Activity.Food_detailsActivity" />
+        <activity android:name=".UI.Activity.IngredientsreplacementActivtiy" />
     </application>
 
 </manifest>

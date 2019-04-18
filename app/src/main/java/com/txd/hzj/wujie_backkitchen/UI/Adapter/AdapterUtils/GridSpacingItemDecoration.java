@@ -1,4 +1,4 @@
-package com.txd.hzj.wujie_backkitchen.UI.Adapter;
+package com.txd.hzj.wujie_backkitchen.UI.Adapter.AdapterUtils;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

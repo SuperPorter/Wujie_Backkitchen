@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:text="01"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_weight="0.1"
+        android:layout_height="match_parent" >
+        <com.txd.hzj.uicode.SingleButton.SmoothCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:background="@color/grey"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:text="01"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_weight="0.1"
+        android:layout_height="match_parent" />
+    <View
+        android:background="@color/grey"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"/>
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="0dp"
+        android:layout_weight="0.15"
+        android:layout_height="match_parent" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="0.15"
+        android:gravity="center|left"
+        android:text="白菜"
+        android:layout_height="match_parent" />
+    <View
+        android:background="@color/grey"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:text="已设置"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="wrap_content" />
+</LinearLayout>

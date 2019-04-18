@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/allitem_rv_ap_ap_item_dishname"
+        android:text="香菜"
+        android:textColor="#009fe8"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/dish_bacground"
+        android:layout_width="0dp"
+        android:layout_weight="0.1"
+        android:layout_height="25dp" />
+    <TextView
+        android:id="@+id/allitem_rv_ap_ap_item_dishmessage"
+        android:textColor="#009fe8"
+        android:text="不要香菜不要香菜不要香菜不要香菜不要香菜不要香菜不要香菜不要香菜不要香菜不要香"
+        android:layout_width="0dp"
+        android:layout_weight="0.9"
+        android:singleLine="false"
+        android:ellipsize="none"
+        android:layout_marginLeft="5dp"
+        android:maxLines="5"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+</LinearLayout>

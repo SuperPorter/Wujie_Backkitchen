@@ -19,6 +19,7 @@
             android:layout_marginRight="@dimen/px80"
             android:background="@drawable/randus_lin">
             <ImageView
+                android:id="@+id/all_child_item_iv_icon"
                 android:layout_width="0dp"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/ic_launcher_background"
@@ -31,12 +32,14 @@
                 android:layout_weight="0.8"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/all_child_item_order_name"
                     android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="外卖订单" />
 
                 <TextView
+                    android:id="@+id/all_child_item_order_time"
                     android:textColor="@color/black"
                     android:layout_marginTop="@dimen/sp50"
                     android:layout_width="wrap_content"
@@ -65,13 +68,16 @@
                 android:text="菜品信息"
                 android:textColor="@color/red" />
         </LinearLayout>
-        <com.txd.hzj.code_library.View.NestRecyclerView
+        <com.txd.hzj.code_library.View.NestRecyclerView2
             android:id="@+id/recycler_view_all_child"
             android:layout_below="@+id/item_message_lin"
             android:layout_width="match_parent"
             android:paddingLeft="35dp"
-            android:layout_height="300dp">
+            android:layout_height="300dp"
+            android:scrollbarTrackVertical="@drawable/all_item_recycler_track"
+            android:scrollbarThumbVertical="@drawable/all_item_recycler_thumb"
+            android:scrollbars="vertical">
 
-        </com.txd.hzj.code_library.View.NestRecyclerView>
+        </com.txd.hzj.code_library.View.NestRecyclerView2>
     </RelativeLayout>
 </android.support.v7.widget.CardView>
