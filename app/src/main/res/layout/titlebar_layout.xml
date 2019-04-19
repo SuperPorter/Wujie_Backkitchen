@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/toolbar"
-    app:contentInsetStart="0dp"
-    android:layout_gravity="center"
     android:background="@color/red"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/AlertDialog.AppCompat.Light"
+    android:id="@+id/titlebar"
     android:orientation="vertical">
+    <ImageView
+        android:id="@+id/titlebar_back"
+        android:layout_width="wrap_content"
+        android:src="@drawable/bg_back"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="17dp"
+        android:layout_marginLeft="16dp"/>
     <TextView
         android:id="@+id/tv_title_toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-        android:textSize="22sp"
+        android:textSize="20sp"
+        android:layout_marginBottom="17dp"
+        android:text="我是名字"
         android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"/>
-</android.support.v7.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginBottom="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true">
+        <ImageView
+            android:id="@+id/titlebar_usericon"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="32dp" />
+        <TextView
+            android:id="@+id/titlebar_username"
+            android:textSize="20sp"
+            android:text="我是名字"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/titlebar_usericon"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -11,8 +11,9 @@ import android.widget.LinearLayout;
 
 import com.txd.hzj.code_library.BaseCode.BaseLazyFragment;
 import com.txd.hzj.code_library.BaseCode.BaseRecyclerViewAdapter;
+import com.txd.hzj.code_library.View.RecyclerViewScrollView;
 import com.txd.hzj.wujie_backkitchen.R;
-import com.txd.hzj.wujie_backkitchen.UI.Activity.Food_detailsActivity;
+import com.txd.hzj.wujie_backkitchen.UI.Activity.Ingredients_replacementActivity;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.EstImateAdapter.EsimateItemAdapter;
 
 import java.util.ArrayList;
@@ -30,12 +31,12 @@ import butterknife.Unbinder;
 public class EstimateItemFragment extends BaseLazyFragment {
 
 
-    @BindView(R.id.est_item_rv)
-    RecyclerView estItemRv;
+    @BindView(R.id.all_tiem_layout)
+    RecyclerViewScrollView allTiemLayout;
 
     @Override
     protected int getLayoutId() {
-        return R.layout.estimate_item_layout;
+        return R.layout.product_vpitem_layout;
     }
 
     @Override
@@ -52,18 +53,18 @@ public class EstimateItemFragment extends BaseLazyFragment {
     protected void initData() {
         List<String> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            list.add("0"+i);
+            list.add("0" + i);
         }
         EsimateItemAdapter adapter = new EsimateItemAdapter(getContext());
         adapter.setData(list);
         adapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(RecyclerView recyclerView, View itemView, int position) {
-                startActivity(Food_detailsActivity.class);
+                startActivity(Ingredients_replacementActivity.class);
             }
         });
-        estItemRv.setAdapter(adapter);
-        estItemRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        estItemRv.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+        allTiemLayout.setAdapter(adapter);
+        allTiemLayout.setLayoutManager(new LinearLayoutManager(getContext()));
+        allTiemLayout.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
     }
 }

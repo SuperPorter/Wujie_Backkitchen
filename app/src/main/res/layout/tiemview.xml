@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="0.5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="#666666" />
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/timelin_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:src="@mipmap/piccirclegreen" />
+        <ImageView
+            android:id="@+id/timelin_usericon"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="32dp"
+            android:layout_toRightOf="@+id/timelin_type"
+            android:layout_marginLeft="4dp"
+            android:layout_height="32dp" />
+        <TextView
+            android:id="@+id/txt_date_title"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/timelin_usericon"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/red"
+            android:text="打荷工 王大锤 已打印小票"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/txt_date_time"
+            android:layout_below="@id/txt_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/timelin_usericon"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/red"
+            android:text="2018/02/03 11:50:00"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <View
+        android:layout_marginLeft="68dp"
+        android:layout_below="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D2D2D2"/>
+
+</RelativeLayout>

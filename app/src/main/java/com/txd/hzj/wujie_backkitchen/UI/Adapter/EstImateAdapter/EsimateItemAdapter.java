@@ -20,7 +20,7 @@ public class EsimateItemAdapter extends BaseRecyclerViewAdapter<String,EsimateIt
     @NonNull
     @Override
     public EsimItemViewHoder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new EsimItemViewHoder(viewGroup, R.layout.esim_item_layout);
+        return new EsimItemViewHoder(viewGroup, R.layout.foodreplays_item_layout);
     }
 
     @Override

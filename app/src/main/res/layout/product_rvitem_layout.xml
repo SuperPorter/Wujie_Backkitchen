@@ -2,9 +2,9 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
+    android:layout_height="326dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp">
+    app:cardCornerRadius="4dp">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,12 +17,12 @@
                 android:id="@+id/item_child_lin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="16dp"
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/all_rv_item_dish_type"
                     android:textColor="@color/red"
-                    android:textSize="25dp"
+                    android:textSize="16sp"
                     android:text="待备菜"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
@@ -31,37 +31,40 @@
                 <TextView
                     android:layout_toRightOf="@+id/all_rv_item_dish_type"
                     android:textColor="@color/grey"
-                    android:textSize="20dp"
+                    android:textSize="14sp"
                     android:layout_marginLeft="20dp"
-                    android:text="等待备菜"
+                    android:text="等待备菜~"
                     android:layout_centerVertical="true"
                     android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/food_detils_rvitem"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:text="详情>"
+                    android:text="详情＞"
+                    android:textSize="13sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RelativeLayout>
 
             <View
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:background="@color/grey"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>
 
             <LinearLayout
-                android:layout_margin="10dp"
+                android:layout_marginBottom="16dp"
+                android:layout_margin="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="125dp"
+                android:layout_height="95dp"
                 android:orientation="horizontal">
                 <ImageView
                     android:src="@mipmap/ic_launcher"
-                    android:layout_width="125dp"
-                    android:layout_height="125dp" />
+                    android:layout_width="95dp"
+                    android:layout_height="95dp" />
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -69,19 +72,19 @@
                     <RelativeLayout
                         android:id="@+id/all_rv_item_dish_re"
                         android:layout_width="match_parent"
-                        android:layout_height="62.5dp"
+                        android:layout_height="47.5dp"
                         android:orientation="vertical">
                         <TextView
                             android:id="@+id/all_rv_item_dish_name"
                             android:text="陆地神仙菜"
-                            android:textSize="20dp"
+                            android:textSize="16sp"
                             android:textColor="@color/black"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <TextView
                             android:layout_below="@+id/all_rv_item_dish_name"
-                            android:layout_marginTop="4dp"
-                            android:textSize="16dp"
+                            android:layout_marginTop="10dp"
+                            android:textSize="11sp"
                             android:drawablePadding="4dp"
                             android:text="预计时间: 00:12:56"
                             android:drawableLeft="@mipmap/time_icon"
@@ -90,17 +93,18 @@
                         <ImageView
                             android:layout_alignParentRight="true"
                             android:src="@mipmap/ic_launcher"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_width="32dp"
+                            android:layout_height="32dp" />
                     </RelativeLayout>
                     <RelativeLayout
-                        android:layout_marginTop="20dp"
                         android:layout_below="@+id/all_rv_item_dish_re"
+                        android:layout_marginTop="14dp"
                         android:layout_width="match_parent"
-                        android:layout_height="62.5dp">
+                        android:layout_height="47.5dp">
                         <TextView
                             android:id="@+id/ss"
                             android:text="接单时间："
+                            android:textSize="14dp"
                             android:textColor="@color/grey"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -108,19 +112,20 @@
                             android:id="@+id/all_rv_item_dish_orders_tiem"
                             android:layout_alignParentRight="true"
                             android:textColor="@color/black"
+                            android:textSize="14dp"
                             android:text="2018/04/08 10:30"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <TextView
-                            android:layout_marginTop="5dp"
                             android:layout_below="@+id/ss"
                             android:id="@+id/ss1"
                             android:text="倒计时:"
+                            android:textSize="14dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <cn.iwgang.countdownview.CountdownView
                             android:layout_alignParentRight="true"
-                            android:layout_marginTop="10dp"
+                            app:timeTextSize="14dp"
                             android:layout_below="@+id/all_rv_item_dish_orders_tiem"
                             android:id="@+id/all_rv_item_dish_countdowntime"
                             app:timeTextColor="@color/red"
@@ -131,9 +136,9 @@
 
             </LinearLayout>
             <View
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
                 android:background="@color/grey"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"/>

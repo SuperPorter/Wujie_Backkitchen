@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="319dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightyellow2">
+        <LinearLayout
+            android:id="@+id/item_child_lin"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/randus_lin"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_marginLeft="15dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/all_child_item_order_name"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="外卖订单~" />
+                <TextView
+                    android:id="@+id/all_child_item_order_time"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="17dp"
+                    android:layout_width="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_height="wrap_content"
+                    android:text="桌号：A-001、A-002、A-003" />
+            </LinearLayout>
+            <TextView
+                android:textColor="@color/red"
+                android:textSize="18sp"
+                android:text="待领取"
+                android:gravity="right"
+                android:layout_marginRight="16dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="match_parent"
+                android:layout_marginTop="17dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/item_message_lin"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/item_child_lin"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="27dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            tools:ignore="UnknownIdInLayout">
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/red" />
+            <TextView
+                android:layout_marginLeft="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="菜品信息"
+                android:textColor="@color/red" />
+        </LinearLayout>
+        <com.txd.hzj.code_library.View.NestRecyclerView2
+            android:id="@+id/recycler_view_all_child"
+            android:layout_below="@+id/item_message_lin"
+            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_height="300dp"
+            android:scrollbarTrackVertical="@drawable/all_item_recycler_track"
+            android:scrollbarThumbVertical="@drawable/all_item_recycler_thumb"
+            android:scrollbars="vertical">
+
+        </com.txd.hzj.code_library.View.NestRecyclerView2>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

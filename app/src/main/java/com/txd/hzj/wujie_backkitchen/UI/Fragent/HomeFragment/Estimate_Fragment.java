@@ -10,7 +10,6 @@ import com.txd.hzj.code_library.BaseCode.BaseLazyFragment;
 import com.txd.hzj.wujie_backkitchen.R;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.MyViewPagerAdapter;
 import com.txd.hzj.wujie_backkitchen.UI.Fragent.EstimateFragment.EstimateItemFragment;
-import com.txd.hzj.wujie_backkitchen.UI.Fragent.ProductionFragment.ProductionDetailsFragment;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -41,7 +40,7 @@ public class Estimate_Fragment extends BaseLazyFragment {
     private List<String> titles;
     @Override
     protected int getLayoutId() {
-        return R.layout.estimate_layout_fragment;
+        return R.layout.foodreplays_layout_fragment;
     }
 
     @Override

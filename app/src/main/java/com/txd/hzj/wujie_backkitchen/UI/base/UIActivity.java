@@ -30,14 +30,12 @@ public abstract class UIActivity extends BaseActivity {
         //初始化沉浸式状态栏
         if (isStatusBarEnabled()) {
             statusBarConfig().init();
-
             //设置标题栏
             if (getTitleBarId() > 0) {
                 ImmersionBar.setTitleBar(this, findViewById(getTitleBarId()));
             }
         }
     }
-
     /**
      * 是否使用沉浸式状态栏
      */

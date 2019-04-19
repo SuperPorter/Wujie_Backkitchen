@@ -12,6 +12,8 @@
         android:layout_weight="0.1"
         android:layout_height="match_parent" >
         <com.txd.hzj.uicode.SingleButton.SmoothCheckBox
+            app:color_checked="@color/red"
+            android:id="@+id/food_details_rv_item_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>

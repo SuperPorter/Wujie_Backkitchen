@@ -18,13 +18,6 @@ import java.util.List;
 
 /**
  * @Description:主要功能:Fragment管理类
- * @Prject: CommonUtilLibrary
- * @Package: com.jingewenku.abrahamcaijin.commonutil
- * @author: AbrahamCaiJin
- * @date: 2017年07月13日 15:53
- * @Copyright: 个人版权所有
- * @Company:
- * @version: 1.0.0
  */
 
 public final class FragmentManager {

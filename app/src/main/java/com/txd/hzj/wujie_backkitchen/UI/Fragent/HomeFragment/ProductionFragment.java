@@ -58,7 +58,7 @@ public class ProductionFragment extends BaseLazyFragment {
         titles = new ArrayList<>();
         fragmentList = new ArrayList<>();
         titles.add("全部");
-        titles.add("散桌");
+        titles.add("堂食");
         titles.add("外卖");
         titles.add("宴会");
         fragmentList.add(new ProductionDetailsFragment());
