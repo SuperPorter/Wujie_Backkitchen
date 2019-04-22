@@ -23,30 +23,33 @@
         android:layout_weight="0.1"
         android:layout_height="match_parent"
         android:layout_gravity="center"/>
-    <LinearLayout
+    <RelativeLayout
         android:background="@drawable/lin_ranidus"
         android:visibility="visible"
         android:gravity="center"
         android:text="注意制作时间"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.1"
+        android:layout_weight="0.15"
         android:orientation="horizontal">
         <ImageView
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="0.2"
-            android:layout_marginLeft="3dp"
-            android:layout_height="wrap_content" />
+            android:id="@+id/ordertime_icon"
+            android:src="@mipmap/worningtime_icon"
+            android:layout_centerVertical="true"
+            android:layout_width="12dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="12dp" />
         <TextView
+            android:layout_toRightOf="@+id/ordertime_icon"
             android:text="注意制作时间"
-            android:textSize="7sp"
-            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:textSize="11sp"
+            android:layout_centerVertical="true"
             android:textColor="@color/white"
-            android:layout_width="0dp"
-            android:layout_weight="0.8"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-    </LinearLayout>
+    </RelativeLayout>
     <TextView
         android:gravity="center"
         android:text="待备菜"
@@ -75,8 +78,8 @@
             android:layout_height="match_parent" />
         <ImageView
             android:layout_marginLeft="10dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:src="@mipmap/worning_icon"
+            android:layout_width="21dp"
+            android:layout_height="21dp" />
     </LinearLayout>
 </LinearLayout>

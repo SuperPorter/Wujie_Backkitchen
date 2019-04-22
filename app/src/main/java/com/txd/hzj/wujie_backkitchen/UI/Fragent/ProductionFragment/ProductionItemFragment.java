@@ -42,8 +42,6 @@ public class ProductionItemFragment extends UiLazyFragment {
     @Override
     protected void initView() {
 
-
-
     }
 
     @Override
@@ -62,9 +60,9 @@ public class ProductionItemFragment extends UiLazyFragment {
                 startActivity(FoodDetailsActivity.class);
             }
         });
-        alldetailsItemRecycelrview.setAdapter(allItem_child_itemRecyclerViewAdapter);
         fullyGridLayoutManager = new FullyGridLayoutManager(getContext(), 2);
-        alldetailsItemRecycelrview.addItemDecoration(new GridSpacingItemDecoration(2,10,false));
+        alldetailsItemRecycelrview.addItemDecoration(new GridSpacingItemDecoration(2,10,true));
         alldetailsItemRecycelrview.setLayoutManager(fullyGridLayoutManager);
+        alldetailsItemRecycelrview.setAdapter(allItem_child_itemRecyclerViewAdapter);
     }
 }

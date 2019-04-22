@@ -24,7 +24,7 @@ import butterknife.BindView;
 /**
  * 创建者：Sunzeyu
  * <br>创建时间：下午 02:35 2019/4/17 017
- * <br>功能描述：
+ * <br>功能描述：制作界面
  */
 public class ProductionDetailsFragment extends BaseLazyFragment {
     @BindView(R.id.all_tiem_layout)
@@ -64,7 +64,6 @@ public class ProductionDetailsFragment extends BaseLazyFragment {
             @Override
             public void onItemClick(RecyclerView recyclerView, View itemView, int position) {
                 //点击事件
-                ToastUtils.showLong("点击了"+lists.get(position).getName());
                 startActivity(OrderdetailsActivity.class);
             }
         });

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="452dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_dialog_input_title"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:background="#FF6161"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="领取任务" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_marginLeft="23dp"
+                    android:text="全部领取"
+                    android:layout_centerVertical="true"
+                    android:textSize="17sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <com.txd.hzj.uicode.SingleButton.SmoothCheckBox
+                    android:id="@+id/pecievetask_smoothnutton"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="22dp"
+                    android:layout_gravity="right"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="23dp"
+                    android:text="部分领取"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <com.mcxtzhang.lib.AnimShopButton
+                    android:layout_marginRight="23dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/pecievetask_shopbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:hintText="领取任务"
+                    app:hintBgColor="@color/red"
+                    app:count="1"
+                    app:maxCount="1000"
+                    app:addEnableBgColor="@color/red"
+                    app:addEnableFgColor="@color/white"
+                    app:gapBetweenCircle="40dp" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_dialog_input_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#666666"
+                android:textSize="19sp" />
+
+            <View
+                android:id="@+id/v_dialog_input_line"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/tv_dialog_input_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="确认"
+                android:textColor="@color/red"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

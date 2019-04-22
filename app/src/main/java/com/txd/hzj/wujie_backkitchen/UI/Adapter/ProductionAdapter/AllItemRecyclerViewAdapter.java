@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * 创建者：Sunzeyu
  * <br>创建时间：下午 05:13 2019/4/17 017
- * <br>功能描述：
+ * <br>功能描述：预定适配器
  */
 public class AllItemRecyclerViewAdapter extends BaseRecyclerViewAdapter<MyItemBean, AllItemRecyclerViewAdapter.ItemViewHoder> {
 
@@ -64,7 +64,6 @@ public class AllItemRecyclerViewAdapter extends BaseRecyclerViewAdapter<MyItemBe
             @Override
             public void onItemClick(RecyclerView recyclerView, View itemView, int position) {
                 //点击跳转到具体的页面，具体还是空界面
-
             }
         });
         itemViewHoder.recyclerViewAllChild.setLayoutManager(new LinearLayoutManager(getContext()));

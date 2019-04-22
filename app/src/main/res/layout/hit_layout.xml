@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="46dp">
         <TextView
+            android:id="@+id/hit_type"
             android:layout_marginLeft="16dp"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
@@ -16,6 +17,36 @@
             android:textColor="#fff23030"
             android:textSize="16sp"
             />
+        <RelativeLayout
+            android:background="@drawable/lin_ranidus"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="注意制作时间"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/hit_type"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/hit_icon_type"
+                android:src="@mipmap/worningtime_icon"
+                android:layout_width="12dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="12dp" />
+            <TextView
+                android:text="注意制作时间"
+                android:textSize="11sp"
+                android:layout_toRightOf="@+id/hit_icon_type"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:layout_marginRight="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
         <TextView
             android:layout_marginRight="16dp"
             android:layout_centerVertical="true"
@@ -174,19 +205,36 @@
                 android:layout_marginTop="16dp"
                 android:text="秘制酱料 50g、高汤200g"
                 android:textColor="#333333"
-                android:gravity="center"
-                android:layout_width="34dp"
+                android:gravity="left"
+                android:layout_width="match_parent"
                 android:textSize="16sp"
                 android:layout_height="21dp" />
-            <TextView
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="49dp"
                 android:layout_marginTop="16dp"
-                android:text="贼辣"
-                android:textColor="#333333"
-                android:gravity="center"
-                android:layout_width="34dp"
-                android:textSize="16sp"
-                android:layout_height="21dp" />
+                android:orientation="horizontal">
+                <TextView
+                    android:width="40dp"
+                    android:text="贼辣"
+                    android:textColor="#333333"
+                    android:gravity="center"
+                    android:layout_width="34dp"
+                    android:textSize="16sp"
+                    android:layout_height="21dp" />
+                <TextView
+                    android:id="@+id/pickingsetting"
+                    android:gravity="center"
+                    android:text="领料设置  >"
+                    android:textColor="@color/red"
+                    android:background="@drawable/packing_back"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="105dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

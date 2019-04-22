@@ -62,4 +62,6 @@ dependencies {
     api 'com.android.support:support-v4:28.0.0'
     api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     api 'com.github.iwgang:countdownview:2.1.6'
+    api 'com.github.arcadefire:nice-spinner:1.4'
+    api 'com.github.mcxtzhang:AnimShopButton:V1.2.0'
 }

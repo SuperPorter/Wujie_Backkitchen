@@ -15,17 +15,19 @@
             android:text="接单时间"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
             android:drawablePadding="6dp"
-            android:drawableLeft="@mipmap/time_icon"
+            android:drawableLeft="@mipmap/desctime_icon"
             android:layout_marginLeft="11dp"/>
         <TextView
             android:text="2018/02/08 10:10"
-            android:textSize="20sp"
+            android:textSize="32sp"
+            android:textColor="@color/black"
             android:layout_marginLeft="27dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="16dp"/>
     </LinearLayout>
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/order_details_magic_indicator"
@@ -37,13 +39,12 @@
         app:tl_indicator_height="3dp"
         app:tl_indicator_width="73dp"
         app:tl_textsize="10dp"
-        app:tl_indicator_style="NORMAL"
         app:tl_textSelectColor="@color/red"
         app:tl_textUnselectColor="#999999"
         app:tl_tab_space_equal="true"/>
     <android.support.v4.view.ViewPager
         android:id="@+id/order_details_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1" />
 </LinearLayout>

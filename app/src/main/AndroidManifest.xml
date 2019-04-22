@@ -34,6 +34,8 @@
         <activity android:name=".UI.Activity.OrderdetailsActivity" />
         <activity android:name=".UI.Activity.Ingredients_replacementActivity" />
         <activity android:name=".UI.Activity.FoodDetailsActivity" />
+        <activity android:name=".UI.Activity.SetChefActivity" />
+        <activity android:name=".UI.Activity.BookingDetailsActivity" />
     </application>
 
 </manifest>

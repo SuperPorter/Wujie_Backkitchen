@@ -1,6 +1,7 @@
 package com.txd.hzj.wujie_backkitchen.UI.Adapter.ProductionAdapter;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
-import com.txd.hzj.code_library.Utils.utils.android.DensityUtil;
 import com.txd.hzj.wujie_backkitchen.Bean.TimeLineDate;
 import com.txd.hzj.wujie_backkitchen.R;
 
@@ -21,9 +21,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TimeAdapter extends RecyclerView.Adapter {
+public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder>{
     private Context activity;
     private List<TimeLineDate> data;
+    private static final int TYPE_TOP = 0x0000;
+    private static final int TYPE_NORMAL = 0x0001;
+    private static final int TYPE_NOOTM = 0x0002;
 
     public TimeAdapter(Context mainActivity, List<TimeLineDate> list) {
         this.activity = mainActivity;
@@ -31,26 +34,48 @@ public class TimeAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        //布局绑定
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.tiemview, parent, false));
     }
-
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((ViewHolder) holder).setPosition(position);
+    public int getItemViewType(int position) {
+        if (position == 0) {
+            return TYPE_TOP;
+        }
+        if (position-1==data.size()) {
+            return TYPE_NOOTM;
+        }
+        return TYPE_NORMAL;
     }
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        ViewHolder itemHolder = (ViewHolder) viewHolder;
+        if (getItemViewType(i) == TYPE_TOP) {
+            // 第一行头的竖线不显示
+            itemHolder.tvTopLine.setVisibility(View.INVISIBLE);
+            itemHolder.tvDot.setImageResource(R.mipmap.time_ok);
+        } else if (getItemViewType(i) == TYPE_NORMAL) {
+            //最后一行不显示
+            itemHolder.tvTopLine.setVisibility(View.VISIBLE);
+        }
+        if (getItemViewType(i) == TYPE_NOOTM) {
+            itemHolder.tv_bootmLine.setVisibility(View.INVISIBLE);
+        }
+        //使用圆角头像
+        Glide.with(activity)
+                .load(R.drawable.ic_launcher_background)
+                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
+                .into(viewHolder.timelinUsericon);
+        viewHolder.txtDateTitle.setText("测试数据！！！");
 
+    }
     @Override
     public int getItemCount() {
         return data.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.v_line)
-        View vLine;
-        @BindView(R.id.timelin_type)
-        ImageView timelinType;
+    public class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.timelin_usericon)
         ImageView timelinUsericon;
         @BindView(R.id.txt_date_time)
@@ -59,89 +84,18 @@ public class TimeAdapter extends RecyclerView.Adapter {
         TextView txtDateTitle;
         @BindView(R.id.rl_title)
         RelativeLayout rlTitle;
+        @BindView(R.id.tvTopLine)
+        TextView tvTopLine;
+        @BindView(R.id.tv_bootmLine)
+        TextView tv_bootmLine;
+        @BindView(R.id.tvDot)
+        ImageView tvDot;
         private int position;
         private TimeLineDate timeData;
 
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-        }
-
-        public void setPosition(int position) {
-            this.position = position;
-            timeData = data.get(position);
-            //时间轴竖线的layoutParams,用来动态的添加竖线
-            RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) vLine.getLayoutParams();
-            //第一个下标位置的时候
-            if (position == 0) {
-                if (data.size() >= 2) {
-                    if (!timeData.getTime().equals(data.get(position + 1).getTime())) {
-                        txtDateTitle.setBackgroundResource(R.drawable.message_sys_bgfirst);
-                        layoutParams.setMargins(DensityUtil.dip2px(vLine.getContext(), 20), DensityUtil.dip2px(vLine.getContext(), 15), 0, 0);
-                    } else {
-                        txtDateTitle.setBackgroundResource(R.drawable.message_sys_bgtop);
-                        layoutParams.setMargins(DensityUtil.dip2px(vLine.getContext(), 20), DensityUtil.dip2px(vLine.getContext(), 15), 0, 0);
-                    }
-                } else {
-                    txtDateTitle.setBackgroundResource(R.drawable.message_sys_bgfirst);
-                    layoutParams.setMargins(DensityUtil.dip2px(vLine.getContext(), 20), DensityUtil.dip2px(vLine.getContext(), 15), 0, 0);
-                }
-                rlTitle.setVisibility(View.VISIBLE);
-                txtDateTime.setText("测试使用");
-                //代码设置是px
-                layoutParams.addRule(RelativeLayout.ALIGN_TOP, R.id.rl_title);
-                layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.txt_date_title);
-            } else if (position < data.size() - 1) {
-                if (timeData.getTime().equals(data.get(position - 1).getTime())) {
-                    if (timeData.getTime().equals(data.get(position + 1).getTime())) {
-                        rlTitle.setVisibility(View.GONE);
-                        layoutParams.setMargins(DensityUtil.dip2px(vLine.getContext(), 20), DensityUtil.dip2px(vLine.getContext(), 0), 0, 0);
-                        txtDateTitle.setBackgroundResource(R.drawable.message_sys_bgcenter);
-                        layoutParams.addRule(RelativeLayout.ALIGN_TOP, R.id.txt_date_title);
-                        layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.txt_date_title);
-                    } else {
-                        rlTitle.setVisibility(View.GONE);
-                        txtDateTitle.setBackgroundResource(R.drawable.message_sys_bgbot);
-                        layoutParams.addRule(RelativeLayout.ALIGN_TOP, R.id.txt_date_title);
-                        layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.txt_date_title);
-                    }
-
-                } else {
-                    if (!timeData.getTime().equals(data.get(position + 1).getTime())) {
-                        txtDateTitle.setBackgroundResource(R.drawable.message_sys_bgfirst);
-                    } else {
-                        txtDateTitle.setBackgroundResource(R.drawable.message_sys_bgtop);
-                    }
-                    layoutParams.setMargins(DensityUtil.dip2px(vLine.getContext(), 20), DensityUtil.dip2px(vLine.getContext(), 0), 0, 0);
-                    rlTitle.setVisibility(View.VISIBLE);
-                    txtDateTime.setText(TimeFormat.format("yyyy.MM.dd", timeData.getTime()));
-                    layoutParams.addRule(RelativeLayout.ALIGN_TOP, R.id.rl_title);
-                    layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.txt_date_title);
-                }
-
-            } else {
-                if (!timeData.getTime().equals(data.get(position - 1).getTime())) {
-                    txtDateTitle.setBackgroundResource(R.drawable.message_sys_bgfirst);
-                    rlTitle.setVisibility(View.VISIBLE);
-                    txtDateTime.setText(TimeFormat.format("yyyy.MM.dd", timeData.getTime()));
-                    layoutParams.setMargins(DensityUtil.dip2px(vLine.getContext(), 20), DensityUtil.dip2px(vLine.getContext(), 0), 0, 0);
-                    layoutParams.addRule(RelativeLayout.ALIGN_TOP, R.id.rl_title);
-                    layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.txt_date_title);
-                } else {
-                    rlTitle.setVisibility(View.GONE);
-                    txtDateTitle.setBackgroundResource(R.drawable.message_sys_bgbot);
-                    txtDateTime.setText(TimeFormat.format("yyyy.MM.dd", timeData.getTime()));
-                    layoutParams.setMargins(DensityUtil.dip2px(vLine.getContext(), 20), DensityUtil.dip2px(vLine.getContext(), 0), 0, 0);
-                    layoutParams.addRule(RelativeLayout.ALIGN_TOP, R.id.txt_date_title);
-                    layoutParams.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.txt_date_title);
-                }
-            }
-            vLine.setLayoutParams(layoutParams);
-//            txtDateTitle.setText(timeData.getMessage());
-            //使用圆角头像
-            Glide.with(activity).load(R.mipmap.ic_launcher)
-                    .apply(RequestOptions.bitmapTransform(new CircleCrop()))
-                    .into(timelinUsericon);
         }
     }
 }

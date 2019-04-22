@@ -87,6 +87,7 @@ public class OrderdetailsActivity extends UIActivity {
         MyViewPagerAdapter myViewPagerAdapter = new MyViewPagerAdapter(getSupportFragmentManager(), fragmentList, titles);
         orderDetailsViewpager.setAdapter(myViewPagerAdapter);
         orderDetailsMagicIndicator.setViewPager(orderDetailsViewpager);
+        orderDetailsMagicIndicator.setMsgMargin(0,90,80);
         orderDetailsMagicIndicator.showMsg(0, 100);
         orderDetailsMagicIndicator.showMsg(1, 100);
         orderDetailsMagicIndicator.showMsg(2, 100);

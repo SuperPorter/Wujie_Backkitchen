@@ -5,12 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.txd.hzj.code_library.BaseCode.BaseLazyFragment;
 import com.txd.hzj.code_library.BaseCode.BaseRecyclerViewAdapter;
 import com.txd.hzj.code_library.View.FullyGridLayoutManager;
 import com.txd.hzj.code_library.View.RecyclerViewScrollView;
 import com.txd.hzj.wujie_backkitchen.R;
+import com.txd.hzj.wujie_backkitchen.UI.Activity.BookingDetailsActivity;
 import com.txd.hzj.wujie_backkitchen.UI.Activity.FoodDetailsActivity;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.AdapterUtils.GridSpacingItemDecoration;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.DestineAdapter.DestineItemRVAdapter;
@@ -58,15 +60,15 @@ public class DestineItemFragment extends BaseLazyFragment {
         DestineItemRVAdapter allItem_child_itemRecyclerViewAdapter = new DestineItemRVAdapter(getContext());
         allItem_child_itemRecyclerViewAdapter.setData(list);
         //点击查看详情
-        allItem_child_itemRecyclerViewAdapter.setOnChildClickListener(R.id.food_detils_rvitem, new BaseRecyclerViewAdapter.OnChildClickListener() {
+        allItem_child_itemRecyclerViewAdapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener() {
             @Override
-            public void onChildClick(RecyclerView recyclerView, View childView, int position) {
-                startActivity(FoodDetailsActivity.class);
+            public void onItemClick(RecyclerView recyclerView, View itemView, int position) {
+                startActivity(BookingDetailsActivity.class);
             }
         });
         alldetailsItemRecycelrview.setAdapter(allItem_child_itemRecyclerViewAdapter);
         FullyGridLayoutManager fullyGridLayoutManager = new FullyGridLayoutManager(getContext(), 2);
-        alldetailsItemRecycelrview.addItemDecoration(new GridSpacingItemDecoration(2,10,false));
+        alldetailsItemRecycelrview.addItemDecoration(new GridSpacingItemDecoration(2,16,true));
         alldetailsItemRecycelrview.setLayoutManager(fullyGridLayoutManager);
     }
 
