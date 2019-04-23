@@ -1,1 +1,1 @@
-include ':app', ':uicode', ':code_library'
+include ':app', ':uicode', ':code_library','Netlibrary'

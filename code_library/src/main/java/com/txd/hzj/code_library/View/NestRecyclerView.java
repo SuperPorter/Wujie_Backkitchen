@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-import com.txd.hzj.code_library.Utils.utils.android.LogUtils;
+import com.txd.hzj.code_library.BaseUtils.android.LogUtils;
 
 public class NestRecyclerView extends RecyclerView {
 

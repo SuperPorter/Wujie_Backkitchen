@@ -1,6 +1,5 @@
 package com.txd.hzj.wujie_backkitchen.UI.Activity;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -24,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class HomeActivity extends UIActivity {
     @BindView(R.id.hoem_main_fragment)
@@ -69,7 +67,6 @@ public class HomeActivity extends UIActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.rb_production: {
-                        //制作
                         FragmentManager.replaceFragment(getSupportFragmentManager(), productionFragment, R.id.hoem_main_fragment, true);
                         FragmentManager.showFragment(productionFragment);
                         break;
@@ -78,6 +75,7 @@ public class HomeActivity extends UIActivity {
                         //预定
                         FragmentManager.replaceFragment(getSupportFragmentManager(), destine_fragment, R.id.hoem_main_fragment, true);
                         FragmentManager.showFragment(destine_fragment);
+
                         break;
                     }
                     case R.id.rb_estimate: {
@@ -91,7 +89,6 @@ public class HomeActivity extends UIActivity {
         });
 
     }
-
     @Override
     protected void initData() {
         //设置头像

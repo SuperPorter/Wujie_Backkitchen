@@ -6,14 +6,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CircleCrop;
-import com.bumptech.glide.request.RequestOptions;
 import com.txd.hzj.code_library.BaseCode.BaseRecyclerViewAdapter;
 import com.txd.hzj.code_library.View.NestRecyclerView2;
+import com.txd.hzj.code_library.View.RTextView;
 import com.txd.hzj.wujie_backkitchen.Bean.MyAllChildItemBean;
 import com.txd.hzj.wujie_backkitchen.Bean.MyItemBean;
 import com.txd.hzj.wujie_backkitchen.R;
@@ -45,10 +42,7 @@ public class AllItemRecyclerViewAdapter extends BaseRecyclerViewAdapter<MyItemBe
         List<MyAllChildItemBean> list = new ArrayList<>();
         itemViewHoder.allChildItemOrderTime.setText(myItemBean.getTime());
         itemViewHoder.allChildItemOrderName.setText(myItemBean.getName());
-        Glide.with(getContext())
-                .load(R.drawable.ic_launcher_background)
-                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
-                .into(itemViewHoder.allChildItemIvIcon);
+        itemViewHoder.allChildItemIvIcon.setText("外卖");
         for (int i1 = 0; i1 < 50; i1++) {
             MyAllChildItemBean bean = new MyAllChildItemBean();
             bean.setName(i%3==1?"菜品A":"菜品B");
@@ -73,13 +67,13 @@ public class AllItemRecyclerViewAdapter extends BaseRecyclerViewAdapter<MyItemBe
 
     class ItemViewHoder extends BaseRecyclerViewAdapter.ViewHolder {
         private NestRecyclerView2 recyclerViewAllChild;
-        private ImageView allChildItemIvIcon;
+        private RTextView allChildItemIvIcon;
         private TextView allChildItemOrderName;
         private TextView allChildItemOrderTime;
         private ItemViewHoder(ViewGroup parent, int layoutId) {
             super(parent, layoutId);
             recyclerViewAllChild = (NestRecyclerView2) findViewById(R.id.recycler_view_all_child);
-            allChildItemIvIcon = (ImageView) findViewById(R.id.all_child_item_iv_icon);
+            allChildItemIvIcon = (RTextView) findViewById(R.id.all_child_item_iv_icon);
             allChildItemOrderName = (TextView) findViewById(R.id.all_child_item_order_name);
             allChildItemOrderTime = (TextView) findViewById(R.id.all_child_item_order_time);
         }

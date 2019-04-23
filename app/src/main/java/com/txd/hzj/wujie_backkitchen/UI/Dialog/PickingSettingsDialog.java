@@ -15,8 +15,8 @@ import android.widget.TextView;
 import com.txd.hzj.code_library.BaseCode.BaseDialog;
 import com.txd.hzj.code_library.BaseCode.BaseDialogFragment;
 import com.txd.hzj.code_library.BaseCode.BaseRecyclerViewAdapter;
-import com.txd.hzj.code_library.Utils.utils.android.LogUtils;
-import com.txd.hzj.code_library.Utils.utils.android.ToastUtils;
+import com.txd.hzj.code_library.BaseUtils.android.LogUtils;
+import com.txd.hzj.code_library.BaseUtils.android.ToastUtils;
 import com.txd.hzj.wujie_backkitchen.R;
 
 import org.angmarch.views.NiceSpinner;

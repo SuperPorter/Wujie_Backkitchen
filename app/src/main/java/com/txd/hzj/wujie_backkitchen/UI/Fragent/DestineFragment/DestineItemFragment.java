@@ -1,29 +1,21 @@
 package com.txd.hzj.wujie_backkitchen.UI.Fragent.DestineFragment;
 
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.txd.hzj.code_library.BaseCode.BaseLazyFragment;
 import com.txd.hzj.code_library.BaseCode.BaseRecyclerViewAdapter;
 import com.txd.hzj.code_library.View.FullyGridLayoutManager;
 import com.txd.hzj.code_library.View.RecyclerViewScrollView;
 import com.txd.hzj.wujie_backkitchen.R;
-import com.txd.hzj.wujie_backkitchen.UI.Activity.BookingDetailsActivity;
-import com.txd.hzj.wujie_backkitchen.UI.Activity.FoodDetailsActivity;
+import com.txd.hzj.wujie_backkitchen.UI.Activity.BookingDatails.BookingDetailsActivity;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.AdapterUtils.GridSpacingItemDecoration;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.DestineAdapter.DestineItemRVAdapter;
-import com.txd.hzj.wujie_backkitchen.UI.Adapter.ProductionAdapter.AllItem_child_ItemRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * 创建者：Sunzeyu

@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+
 import java.util.Random;
 
 import butterknife.ButterKnife;

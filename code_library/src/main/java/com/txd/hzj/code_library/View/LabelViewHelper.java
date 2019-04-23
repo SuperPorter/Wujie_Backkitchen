@@ -14,7 +14,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.txd.hzj.code_library.R;
-import com.txd.hzj.code_library.Utils.utils.android.image.ImageUtils;
+import com.txd.hzj.code_library.BaseUtils.android.image.ImageUtils;
 
 public class LabelViewHelper {
 

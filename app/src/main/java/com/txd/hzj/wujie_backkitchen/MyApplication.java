@@ -1,6 +1,8 @@
 package com.txd.hzj.wujie_backkitchen;
 
+import com.txd.hzj.Netlibrary.RHttp;
 import com.txd.hzj.code_library.BaseCode.BaseApplication;
+import com.txd.hzj.wujie_backkitchen.NetApi.Constants;
 
 /**
  * 创建者：Sunzeyu
@@ -12,6 +14,8 @@ public class MyApplication extends BaseApplication{
     public void onCreate() {
         super.onCreate();
         //初始化操作
-
+        RHttp.Configure.get()
+                .baseUrl(Constants.API_SERVER_URL)
+                .init(this);
     }
 }

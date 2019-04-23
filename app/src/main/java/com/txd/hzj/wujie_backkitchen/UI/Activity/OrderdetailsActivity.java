@@ -94,6 +94,12 @@ public class OrderdetailsActivity extends UIActivity {
         orderDetailsMagicIndicator.showMsg(3, 100);
         orderDetailsMagicIndicator.showMsg(4, 100);
         orderDetailsMagicIndicator.showMsg(5, 100);
+        //设置边距
+        orderDetailsMagicIndicator.setMsgMargin(0,110,13);
+        orderDetailsMagicIndicator.setMsgMargin(1,110,13);
+        orderDetailsMagicIndicator.setMsgMargin(2,110,13);
+        orderDetailsMagicIndicator.setMsgMargin(3,110,13);
+        orderDetailsMagicIndicator.setMsgMargin(4,110,13);
+        orderDetailsMagicIndicator.setMsgMargin(5,110,13);
     }
-
 }

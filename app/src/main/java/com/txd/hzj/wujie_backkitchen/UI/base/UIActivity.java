@@ -5,6 +5,7 @@ import android.view.WindowManager;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.txd.hzj.code_library.BaseCode.BaseActivity;
+import com.txd.hzj.code_library.BaseUtils.android.ToastUtils;
 
 /**
  *    支持沉浸式和侧滑的Activity基类（默认开启沉浸式状态栏和侧滑功能）
@@ -75,4 +76,9 @@ public abstract class UIActivity extends BaseActivity {
         super.onDestroy();
         if (mImmersionBar != null) mImmersionBar.destroy();
     }
+
+    public void showToast(String msg) {
+        ToastUtils.showToast(msg);
+    }
+
 }

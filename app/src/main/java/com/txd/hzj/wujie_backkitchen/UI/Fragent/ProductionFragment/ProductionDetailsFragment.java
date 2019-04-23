@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.txd.hzj.code_library.BaseCode.BaseLazyFragment;
 import com.txd.hzj.code_library.BaseCode.BaseRecyclerViewAdapter;
-import com.txd.hzj.code_library.Utils.utils.android.DateTimeAndroidUtil;
-import com.txd.hzj.code_library.Utils.utils.android.ToastUtils;
+import com.txd.hzj.code_library.BaseUtils.android.DateTimeAndroidUtil;
+import com.txd.hzj.code_library.BaseUtils.android.ToastUtils;
 import com.txd.hzj.code_library.View.FullyGridLayoutManager;
 import com.txd.hzj.code_library.View.RecyclerViewScrollView;
 import com.txd.hzj.wujie_backkitchen.Bean.MyItemBean;
