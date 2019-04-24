@@ -1,22 +1,22 @@
-package com.txd.hzj.Netlibrary.exception;
+package com.txd.hzj.Netlibrary.Exception;
 
 /**
- * api接口错误/异常统一处理类
- *
- * @author ZhongDaFeng
+ * 异常处理
  */
-public class ApiException extends Exception {
-    private int code;//错误码
-    private String msg;//错误信息
 
-    public ApiException(Throwable throwable, int code) {
-        super(throwable);
+public class ApiException extends Exception {
+    private int code;
+    private String displayMessage;
+
+    public ApiException(int code, String displayMessage) {
         this.code = code;
+        this.displayMessage = displayMessage;
     }
 
-    public ApiException(int code, String msg) {
+    public ApiException(int code, String message, String displayMessage) {
+        super(message);
         this.code = code;
-        this.msg = msg;
+        this.displayMessage = displayMessage;
     }
 
     public int getCode() {
@@ -27,11 +27,13 @@ public class ApiException extends Exception {
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getDisplayMessage() {
+        return displayMessage;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setDisplayMessage(String displayMessage) {
+        this.displayMessage = displayMessage;
     }
+
+
 }

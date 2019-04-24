@@ -2,6 +2,10 @@ package com.txd.hzj.wujie_backkitchen.MVPCode;
 
 import com.txd.hzj.wujie_backkitchen.UI.base.UIActivity;
 
+/**
+ * Mvp基类
+ * @param <P>
+ */
 public abstract class MvpActivity<P extends MvpPresenter> extends UIActivity implements IMvpView {
 
     private P mPresenter;

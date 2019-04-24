@@ -6,5 +6,5 @@ package com.txd.hzj.wujie_backkitchen.NetApi;
  * <br>功能描述：所有参数的常量管理类
  */
 public class Constants {
-    public static String API_SERVER_URL = "";
+    public static String API_SERVER_URL = "http://gank.io/api/data/";
 }

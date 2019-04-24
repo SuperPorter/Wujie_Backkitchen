@@ -1,6 +1,7 @@
 package com.txd.hzj.code_library.BaseCode;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+import com.txd.hzj.code_library.manager.ActivityStackManager;
 
 import java.util.Random;
 
@@ -34,13 +36,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initActivity();
-
+        //入栈
+        ActivityStackManager.getActivityStackManager().pushActivity(this);
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
         unbinder.unbind();
+        //销毁的时候出栈
+        ActivityStackManager.getActivityStackManager().popActivity(this);
     }
 
     protected void initActivity() {

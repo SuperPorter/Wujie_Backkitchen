@@ -1,5 +1,7 @@
 package com.txd.hzj.wujie_backkitchen.UI.Activity.Login;
 
+import com.txd.hzj.wujie_backkitchen.MVPCode.BaseListener;
+
 import java.util.List;
 
 /**
@@ -7,8 +9,6 @@ import java.util.List;
  * <br>创建时间：上午 10:53 2019/4/23 023
  * <br>功能描述：
  */
-public interface LoginOnListener {
-    void onSuccess(List<String> data);
+interface LoginOnListener extends BaseListener<String>{
 
-    void onFail(String msg);
 }

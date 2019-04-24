@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/bg_launcher">
+    android:background="@mipmap/bg_launcher"
+    android:id="@+id/login_bac_lin">
     <TextView
         android:text="登录"
         android:textColor="@color/white"
@@ -16,6 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
+        android:id="@+id/login_icon"
         android:src="@mipmap/ic_launcher"
         android:layout_gravity="center"
         android:layout_width="298dp"

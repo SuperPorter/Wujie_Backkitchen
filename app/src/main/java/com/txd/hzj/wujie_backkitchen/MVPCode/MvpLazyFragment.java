@@ -2,6 +2,10 @@ package com.txd.hzj.wujie_backkitchen.MVPCode;
 
 import com.txd.hzj.wujie_backkitchen.UI.base.UiLazyFragment;
 
+/**
+ * Mvp基类
+ * @param <P>
+ */
 public abstract class MvpLazyFragment<P extends MvpPresenter> extends UiLazyFragment implements IMvpView {
 
     private P mPresenter;

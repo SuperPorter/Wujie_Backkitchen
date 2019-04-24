@@ -1,6 +1,7 @@
 package com.txd.hzj.wujie_backkitchen.UI.Activity;
 
 import android.support.v4.app.Fragment;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,8 +13,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
+import com.txd.hzj.Netlibrary.NetWorkManager;
 import com.txd.hzj.code_library.manager.FragmentManager;
 import com.txd.hzj.wujie_backkitchen.R;
+import com.txd.hzj.wujie_backkitchen.UI.Activity.Beater.BeaterActivity;
 import com.txd.hzj.wujie_backkitchen.UI.Fragent.HomeFragment.Destine_Fragment;
 import com.txd.hzj.wujie_backkitchen.UI.Fragent.HomeFragment.Estimate_Fragment;
 import com.txd.hzj.wujie_backkitchen.UI.Fragent.HomeFragment.ProductionFragment;
@@ -23,6 +26,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class HomeActivity extends UIActivity {
     @BindView(R.id.hoem_main_fragment)
@@ -96,6 +103,12 @@ public class HomeActivity extends UIActivity {
                 .load(R.drawable.ic_launcher_background)
                 .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into(titlebarUsericon);
+        titlebarUsericon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(BeaterActivity.class);
+            }
+        });
         fragmentList = new ArrayList<>();
         productionFragment = new ProductionFragment();
         destine_fragment = new Destine_Fragment();

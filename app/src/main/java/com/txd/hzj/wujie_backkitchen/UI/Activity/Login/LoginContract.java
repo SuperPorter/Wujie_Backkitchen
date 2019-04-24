@@ -15,9 +15,15 @@ public class LoginContract {
     public interface View extends IMvpView{
         void LoginError(String msg);
 
-        void LoginSuccess(List<String> data);
+        void LoginSuccess(String data);
+
+        void ShowImage(String url);
+
+        void ShowIcon(String url);
     }
     public interface Presenter{
         void Login(String account, String password);
+        //1：背景图  2：icon
+        void GetImage(int type);
     }
 }
