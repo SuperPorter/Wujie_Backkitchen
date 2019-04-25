@@ -20,7 +20,7 @@ import com.txd.hzj.wujie_backkitchen.R;
  * <br>功能描述：
  */
 public final class RecieveTaskDialog {
-    public static final class Builder extends BaseDialogFragment.Builder<PickingSettingsDialog.Builder> implements View.OnClickListener{
+    public static final class Builder extends BaseDialogFragment.Builder<Builder> implements View.OnClickListener{
 
         private final SmoothCheckBox smoothCheckBox;
         private final AnimShopButton animShopButton;

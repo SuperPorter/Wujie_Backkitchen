@@ -1,4 +1,4 @@
-package com.txd.hzj.wujie_backkitchen.UI.Activity;
+package com.txd.hzj.wujie_backkitchen.UI.Activity.Orderdetails;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.flyco.tablayout.SlidingTabLayout;
+import com.txd.hzj.wujie_backkitchen.MVPCode.MvpActivity;
 import com.txd.hzj.wujie_backkitchen.R;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.MyViewPagerAdapter;
 import com.txd.hzj.wujie_backkitchen.UI.Fragent.ProductionFragment.ProductionItemFragment;
@@ -26,7 +27,7 @@ import butterknife.ButterKnife;
  * <br>功能描述：订单详情
  */
 @SuppressLint("Registered")
-public class OrderdetailsActivity extends UIActivity {
+public class OrderdetailsActivity extends MvpActivity<OrderdetailsPresenter> implements OrderdetailsContract.View{
     @BindView(R.id.order_details_magic_indicator)
     SlidingTabLayout orderDetailsMagicIndicator;
     @BindView(R.id.order_details_viewpager)
@@ -101,5 +102,30 @@ public class OrderdetailsActivity extends UIActivity {
         orderDetailsMagicIndicator.setMsgMargin(3,110,13);
         orderDetailsMagicIndicator.setMsgMargin(4,110,13);
         orderDetailsMagicIndicator.setMsgMargin(5,110,13);
+    }
+
+    @Override
+    protected OrderdetailsPresenter createPresenter() {
+        return new OrderdetailsPresenter();
+    }
+
+    @Override
+    public void ShowLoading() {
+
+    }
+
+    @Override
+    public void loadingComplete() {
+
+    }
+
+    @Override
+    public void showEmpty() {
+
+    }
+
+    @Override
+    public void showError() {
+
     }
 }

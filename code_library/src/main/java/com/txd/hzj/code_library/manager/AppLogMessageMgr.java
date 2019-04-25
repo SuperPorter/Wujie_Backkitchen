@@ -1,5 +1,6 @@
 package com.txd.hzj.code_library.manager;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 
@@ -56,6 +57,7 @@ public class AppLogMessageMgr {
         }
     }
 
+    @SuppressLint("LongLogTag")
     public static void d(String msg){
         if(isDebug){
             Log.d(" [isNetRequestInterceptor] --- ", msg != null ? msg : "");

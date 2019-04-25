@@ -4,6 +4,9 @@ import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+/**
+ * 重写
+ */
 public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
    private int spanCount; //列数
@@ -18,7 +21,6 @@ public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-
        //这里是关键，需要根据你有几列来判断
         int position = parent.getChildAdapterPosition(view); // item position
         int column = position % spanCount; // item column

@@ -1,4 +1,4 @@
-package com.txd.hzj.wujie_backkitchen.UI.Activity;
+package com.txd.hzj.wujie_backkitchen.UI.Activity.FoodDeatails;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.txd.hzj.wujie_backkitchen.Bean.TimeLineDate;
+import com.txd.hzj.wujie_backkitchen.MVPCode.MvpActivity;
 import com.txd.hzj.wujie_backkitchen.R;
+import com.txd.hzj.wujie_backkitchen.UI.Activity.SetChef.SetChefActivity;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.ProductionAdapter.TimeAdapter;
 import com.txd.hzj.wujie_backkitchen.UI.Dialog.PickingSettingsDialog;
-import com.txd.hzj.wujie_backkitchen.UI.base.UIActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ import butterknife.BindView;
  * <br>创建时间：下午 05:12 2019/4/18 018
  * <br>功能描述：菜品详情
  */
-public class FoodDetailsActivity extends UIActivity implements View.OnClickListener {
+public class FoodDetailsActivity extends MvpActivity<FoodDetailsPresent> implements FoodDetailsContract.View,View.OnClickListener {
     @BindView(R.id.timeline_rv)
     RecyclerView timelineRv;
     @BindView(R.id.tv_title)
@@ -94,4 +95,28 @@ public class FoodDetailsActivity extends UIActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    protected FoodDetailsPresent createPresenter() {
+        return new FoodDetailsPresent();
+    }
+
+    @Override
+    public void ShowLoading() {
+
+    }
+
+    @Override
+    public void loadingComplete() {
+
+    }
+
+    @Override
+    public void showEmpty() {
+
+    }
+
+    @Override
+    public void showError() {
+
+    }
 }

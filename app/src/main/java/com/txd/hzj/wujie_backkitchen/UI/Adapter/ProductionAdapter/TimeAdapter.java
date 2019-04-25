@@ -21,12 +21,14 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 时间轴适配器
+ */
 public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder>{
     private Context activity;
     private List<TimeLineDate> data;
     private static final int TYPE_TOP = 0x0000;
     private static final int TYPE_NORMAL = 0x0001;
-    private static final int TYPE_NOOTM = 0x0002;
 
     public TimeAdapter(Context mainActivity, List<TimeLineDate> list) {
         this.activity = mainActivity;
@@ -43,9 +45,6 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder>{
         if (position == 0) {
             return TYPE_TOP;
         }
-        if (position-1==data.size()) {
-            return TYPE_NOOTM;
-        }
         return TYPE_NORMAL;
     }
     @Override
@@ -59,7 +58,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder>{
             //最后一行不显示
             itemHolder.tvTopLine.setVisibility(View.VISIBLE);
         }
-        if (getItemViewType(i) == TYPE_NOOTM) {
+        if (i == data.size() - 1) {
             itemHolder.tv_bootmLine.setVisibility(View.INVISIBLE);
         }
         //使用圆角头像

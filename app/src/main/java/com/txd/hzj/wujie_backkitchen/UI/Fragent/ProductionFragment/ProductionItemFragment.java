@@ -7,7 +7,7 @@ import com.txd.hzj.code_library.BaseCode.BaseRecyclerViewAdapter;
 import com.txd.hzj.code_library.View.FullyGridLayoutManager;
 import com.txd.hzj.code_library.View.RecyclerViewScrollView;
 import com.txd.hzj.wujie_backkitchen.R;
-import com.txd.hzj.wujie_backkitchen.UI.Activity.FoodDetailsActivity;
+import com.txd.hzj.wujie_backkitchen.UI.Activity.FoodDeatails.FoodDetailsActivity;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.ProductionAdapter.AllItem_child_ItemRecyclerViewAdapter;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.AdapterUtils.GridSpacingItemDecoration;
 import com.txd.hzj.wujie_backkitchen.UI.base.UiLazyFragment;

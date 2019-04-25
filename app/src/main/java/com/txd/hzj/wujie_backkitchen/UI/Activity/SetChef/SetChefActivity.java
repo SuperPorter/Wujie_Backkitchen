@@ -1,4 +1,4 @@
-package com.txd.hzj.wujie_backkitchen.UI.Activity;
+package com.txd.hzj.wujie_backkitchen.UI.Activity.SetChef;
 
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.txd.hzj.wujie_backkitchen.MVPCode.MvpActivity;
 import com.txd.hzj.wujie_backkitchen.R;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.ProductionAdapter.SetChefAdapter;
 import com.txd.hzj.wujie_backkitchen.UI.base.UIActivity;
@@ -22,7 +23,7 @@ import butterknife.ButterKnife;
  * <br>创建时间：下午 02:20 2019/4/22 022
  * <br>功能描述：设置厨师界面
  */
-public class SetChefActivity extends UIActivity {
+public class SetChefActivity extends MvpActivity<SetChefPresenter> implements SetChefContract.View {
     @BindView(R.id.tv_title)
     TextView tvTitle;
     @BindView(R.id.toolbar)
@@ -69,5 +70,30 @@ public class SetChefActivity extends UIActivity {
         }
         adapter.setData(list);
         setchefRv.setAdapter(adapter);
+    }
+
+    @Override
+    protected SetChefPresenter createPresenter() {
+        return new SetChefPresenter();
+    }
+
+    @Override
+    public void ShowLoading() {
+
+    }
+
+    @Override
+    public void loadingComplete() {
+
+    }
+
+    @Override
+    public void showEmpty() {
+
+    }
+
+    @Override
+    public void showError() {
+
     }
 }

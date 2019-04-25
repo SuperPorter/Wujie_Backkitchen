@@ -82,6 +82,7 @@ public final class PickingSettingsDialog {
                 }
             }
         }
+
     }
 
     //适配器对象

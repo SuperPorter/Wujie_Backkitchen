@@ -1,27 +1,22 @@
 package com.txd.hzj.wujie_backkitchen.UI.Fragent.EstimateFragment;
 
-import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.txd.hzj.code_library.BaseCode.BaseLazyFragment;
 import com.txd.hzj.code_library.BaseCode.BaseRecyclerViewAdapter;
 import com.txd.hzj.code_library.View.RecyclerViewScrollView;
 import com.txd.hzj.wujie_backkitchen.R;
-import com.txd.hzj.wujie_backkitchen.UI.Activity.Ingredients_replacementActivity;
+import com.txd.hzj.wujie_backkitchen.UI.Activity.Ingredients_replacement.Ingredients_replacementActivity;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.EstImateAdapter.EsimateItemAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * 创建者：Sunzeyu

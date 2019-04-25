@@ -7,7 +7,7 @@ import com.txd.hzj.wujie_backkitchen.MVPCode.MvpPresenter;
  * <br>创建时间：上午 10:45 2019/4/24 024
  * <br>功能描述：
  */
-public class BeaterPresent extends MvpPresenter{
+public class BeaterPresent extends MvpPresenter implements BeaterContract.Presenter{
     @Override
     public void start() {
 

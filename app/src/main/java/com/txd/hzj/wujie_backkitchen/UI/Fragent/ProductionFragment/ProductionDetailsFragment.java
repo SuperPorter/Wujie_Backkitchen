@@ -7,12 +7,11 @@ import android.view.View;
 import com.txd.hzj.code_library.BaseCode.BaseLazyFragment;
 import com.txd.hzj.code_library.BaseCode.BaseRecyclerViewAdapter;
 import com.txd.hzj.code_library.BaseUtils.android.DateTimeAndroidUtil;
-import com.txd.hzj.code_library.BaseUtils.android.ToastUtils;
 import com.txd.hzj.code_library.View.FullyGridLayoutManager;
 import com.txd.hzj.code_library.View.RecyclerViewScrollView;
 import com.txd.hzj.wujie_backkitchen.Bean.MyItemBean;
 import com.txd.hzj.wujie_backkitchen.R;
-import com.txd.hzj.wujie_backkitchen.UI.Activity.OrderdetailsActivity;
+import com.txd.hzj.wujie_backkitchen.UI.Activity.Orderdetails.OrderdetailsActivity;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.ProductionAdapter.AllItemRecyclerViewAdapter;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.AdapterUtils.GridSpacingItemDecoration;
 

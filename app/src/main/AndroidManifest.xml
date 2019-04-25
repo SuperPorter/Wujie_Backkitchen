@@ -38,19 +38,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.Activity.HomeActivity"
+        <activity android:name=".UI.Activity.Home.HomeActivity"
             android:screenOrientation="landscape"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".UI.Activity.OrderdetailsActivity"
+        <activity android:name=".UI.Activity.Orderdetails.OrderdetailsActivity"
             android:screenOrientation="landscape"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".UI.Activity.Ingredients_replacementActivity"
+        <activity android:name=".UI.Activity.Ingredients_replacement.Ingredients_replacementActivity"
             android:screenOrientation="landscape"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".UI.Activity.FoodDetailsActivity"
+        <activity android:name=".UI.Activity.FoodDeatails.FoodDetailsActivity"
             android:screenOrientation="landscape"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".UI.Activity.SetChefActivity"
+        <activity android:name=".UI.Activity.SetChef.SetChefActivity"
             android:screenOrientation="landscape"
             tools:ignore="InnerclassSeparator" />
         <activity android:name=".UI.Activity.BookingDatails.BookingDetailsActivity"

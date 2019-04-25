@@ -1,7 +1,9 @@
-package com.txd.hzj.wujie_backkitchen.UI.Activity;
+package com.txd.hzj.wujie_backkitchen.UI.Activity.Home;
 
+import android.app.Dialog;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,9 +16,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.txd.hzj.Netlibrary.NetWorkManager;
+import com.txd.hzj.code_library.BaseCode.BaseApplication;
 import com.txd.hzj.code_library.manager.FragmentManager;
+import com.txd.hzj.wujie_backkitchen.MVPCode.MvpActivity;
 import com.txd.hzj.wujie_backkitchen.R;
 import com.txd.hzj.wujie_backkitchen.UI.Activity.Beater.BeaterActivity;
+import com.txd.hzj.wujie_backkitchen.UI.Dialog.MessageDialog;
 import com.txd.hzj.wujie_backkitchen.UI.Fragent.HomeFragment.Destine_Fragment;
 import com.txd.hzj.wujie_backkitchen.UI.Fragent.HomeFragment.Estimate_Fragment;
 import com.txd.hzj.wujie_backkitchen.UI.Fragent.HomeFragment.ProductionFragment;
@@ -31,7 +36,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class HomeActivity extends UIActivity {
+public class HomeActivity extends MvpActivity<HomePresent> implements HomeContract.View,View.OnClickListener{
     @BindView(R.id.hoem_main_fragment)
     FrameLayout hoemMainFragment;
     @BindView(R.id.back_button_titlebar)
@@ -103,12 +108,9 @@ public class HomeActivity extends UIActivity {
                 .load(R.drawable.ic_launcher_background)
                 .apply(RequestOptions.bitmapTransform(new CircleCrop()))
                 .into(titlebarUsericon);
-        titlebarUsericon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(BeaterActivity.class);
-            }
-        });
+        titlebarUsericon.setOnClickListener(this);
+        titlebarUsername.setOnClickListener(this);
+        backButtonTitlebar.setOnClickListener(this);
         fragmentList = new ArrayList<>();
         productionFragment = new ProductionFragment();
         destine_fragment = new Destine_Fragment();
@@ -118,5 +120,63 @@ public class HomeActivity extends UIActivity {
         fragmentList.add(estimate_fragment);
         //显示第一个Fragment
         FragmentManager.addFragments(getSupportFragmentManager(), fragmentList, R.id.hoem_main_fragment, 0);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.titlebar_usericon:
+            {
+                startActivity(BeaterActivity.class);
+                break;
+            }
+            case R.id.titlebar_username:
+            {
+                startActivity(BeaterActivity.class);
+                break;
+            }
+            case R.id.back_button_titlebar:
+            {
+                //显示退出提示
+                new MessageDialog.Builder(this).setTitle("退出应用").setMseeage("确定要退出应用吗？").setListener(new MessageDialog.OnListener() {
+                    @Override
+                    public void onConfirm(Dialog dialog) {
+                        BaseApplication.getBaseApplication().exitAppAll();
+                    }
+                    @Override
+                    public void onCancel(Dialog dialog) {
+                        dialog.dismiss();
+                    }
+                }).show();
+                break;
+            }
+            default:
+                break;
+        }
+    }
+
+    @Override
+    protected HomePresent createPresenter() {
+        return new HomePresent();
+    }
+
+    @Override
+    public void ShowLoading() {
+
+    }
+
+    @Override
+    public void loadingComplete() {
+
+    }
+
+    @Override
+    public void showEmpty() {
+
+    }
+
+    @Override
+    public void showError() {
+
     }
 }

@@ -1,4 +1,4 @@
-package com.txd.hzj.wujie_backkitchen.UI.Activity;
+package com.txd.hzj.wujie_backkitchen.UI.Activity.Ingredients_replacement;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.txd.hzj.uicode.SingleButton.SmoothCheckBox;
+import com.txd.hzj.wujie_backkitchen.MVPCode.MvpActivity;
 import com.txd.hzj.wujie_backkitchen.R;
 import com.txd.hzj.wujie_backkitchen.UI.Adapter.EstImateAdapter.FoodDatailsAdapter;
 import com.txd.hzj.wujie_backkitchen.UI.base.UIActivity;
@@ -27,7 +28,7 @@ import butterknife.ButterKnife;
  * <br>功能描述：食材替换
  */
 @SuppressLint("Registered")
-public class Ingredients_replacementActivity extends UIActivity {
+public class Ingredients_replacementActivity extends MvpActivity<Ingredients_replacementPresenter> implements Ingredients_replacementContract.View {
     @BindView(R.id.food_details_allbutton)
     SmoothCheckBox foodDetailsAllbutton;
     @BindView(R.id.food_details_rv)
@@ -97,5 +98,30 @@ public class Ingredients_replacementActivity extends UIActivity {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    @Override
+    protected Ingredients_replacementPresenter createPresenter() {
+        return new Ingredients_replacementPresenter();
+    }
+
+    @Override
+    public void ShowLoading() {
+
+    }
+
+    @Override
+    public void loadingComplete() {
+
+    }
+
+    @Override
+    public void showEmpty() {
+
+    }
+
+    @Override
+    public void showError() {
+
     }
 }

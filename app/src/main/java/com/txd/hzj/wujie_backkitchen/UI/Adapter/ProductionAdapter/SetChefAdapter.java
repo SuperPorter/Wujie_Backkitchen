@@ -28,7 +28,6 @@ public class SetChefAdapter extends BaseRecyclerViewAdapter<String,SetChefAdapte
 
     }
     class ViewHoder extends BaseRecyclerViewAdapter.ViewHolder{
-
         public ViewHoder(ViewGroup parent, int layoutId) {
             super(parent, layoutId);
         }
